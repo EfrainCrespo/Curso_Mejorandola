@@ -1,5 +1,5 @@
-Curso_Mejorandola
-=================
+Curso Mejorando.la
+==================
 
 Ejemplos y practicas para el curso on-line de Mejorando.la
 
