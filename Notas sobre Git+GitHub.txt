@@ -1,0 +1,131 @@
+Git + GitHub
+============
+
+Esto no pretende ser un curso/tutorial/guia ni mucho menos, simplemente son apuntes y anotaciones que fui tomando con los distintos recursos que utilice para adentrarme en el mundo de los Sistemas de Control de Versiones.
+
+Cabe aclarar que hace dos dias atras no tenia la mas remota idea de que se trataba todo esto, pero con un poco de paciencia y tiempo e insistencia logre entender como trabaja este CVS.
+
+
+
+¿Git o GitHub?
+--------------
+
+Esta es una de las cosas que mas me costo entender. No es que haya que utilizar uno u otro, porque simplemente, salvando las distancias son lo mismo, salvo que uno esta instalado en tu maquina local (Git) y el otro en un servidor externo (GitHub). GitHub actua como un repositorio de proyectos trabajados en Git. Tambien se puede dar el caso de que no quieras dejar tus proyectos disponibles en la web y puedes trabajar con Git solamente con repositorios locales.
+
+
+
+Committed - Staged
+------------------
+
+Son diferentes estados en lo que se pueden encontrar tus archivos. 
+Siguiendo un camino logico supongamos que se crea un nuevo archivo:
+
+* En un primer momento se puede decir que si estado es "Sin trackear", es decir que Git no estara pendiente de sus cambios o modificaciones hasta que se lo indiquemos.
+* Luego de indicarle a Git que haga tracking del archivo, Git nos indicara que el archivo fue modificado y ese sera su nuevo estado (Modificado).
+* Para registrar definitivamente la modificacion del archivo en el repositorio de Git primero deben pasar por el Stage. En este estado se encuentran todos los archivos que seran incluidos en la base de datos en el próximo commit.
+* Commit es el ultimo estado, donde Git toma todos los archivos que se encuentran en Stage y registra sus modificaciones en la base de datos.
+
+La explicacion puede ser un poco confusa porque como dije son mas que nada notas anidadas, no se asusten que al final dejo los links a los recursos que les comente mas arriba, donde seguramente lograran enteder todo esto con mayor claridad.
+
+
+
+Consola (Git Shell)
+-------------------
+
+Para aprender Git en profundidad deberas acostumbrarte al uso de la consola, pero para los que crean esto algo imposible tambien existe una version grafica para trabajar Git+GitHub que se puede descargar del sitio de GitHub, su nombre es "GitHub for Windows". Este software tambien incluye una consola de Git (Git Shell).
+
+GitHub for Windows:   http://windows.github.com/
+GitHub for Mac:       http://mac.github.com/
+
+
+Para poder conectar Git y GitHub sin necesidad de estar indicando Usuario y Password de GitHub todo el tiempo lo ideal es crear una conexion SSH. La instalacion de cualquiera de estos clientes crea los archivos necesarios por defecto, por lo cual no seria necesario realizar el proceso a mano, aunque se describen igual los comandos a ejecutar.
+
+A continuacion se detallan los comandos basicos para comenzar a usar Git+GitHub.
+
+
+
+Configurar Git y la conexion con GitHub
+---------------------------------------
+
+Configurar nuestro nombre en Git:
+
+  >$ git config --global user.name "Nombre"
+  
+Configurar nuestro email en Git:
+
+  >$ git config --global user.email "mail@dominio.com"
+ 
+Si es la primera vez que usas Git+GitHub entonces primero se debe crear la conexion SSH:
+
+  >$ ssh-keygen -t rsa -C "mail@dominio.com" 	(Creamos la llave)
+  >$ clip < ~/.ssh/id_rsa.pub			(Copiamos el contenido de id_rsa.pub. Si no llega a existir este archivo probar con github_rsa.pub)
+
+  Ir a www.github.com --> Ingresar con usuario y password --> Account Settings --> SSH Keys --> Add SSH Key --> Pegar lo que acabamos de copiar, poner un titulo y guardar.
+
+  Esta clave SSH sera unica para tu computadora, de esta manera GitHub sabe que esa es tu computadora, para trabajar en otro PC hay que repetir el proceso en esa PC.
+
+
+Trabajando con Git+GitHub
+-------------------------
+
+Crear un nuevo repositorio local en Git:
+
+  Si el directorio esta creado, ir a ese directorio y ejecutar:
+
+  >$ git init
+
+  Si el directorio no esta creado:
+
+  >$ mkdir nombre_directorio
+  >$ cd nombre_directorio
+  >$ git init
+
+  --------------------------------------------------------------------------------------------------------
+  Algunos comandos de consola para moverte libremente entre los directorios:
+     ls		Lista el contenido de un directorio
+     cd		Moverte a otro directorio
+     cd ..	Ir al directorio superior (en la jerarquia de directorios)
+     mkdir	Crear un directorio nuevo
+  --------------------------------------------------------------------------------------------------------
+
+
+Crear un repositorio en GitHub:
+
+  Ir a http://www.github.com/new y completar:
+
+    - Nombre del repositorio
+    - Descripcion del contenido del repositorio
+    - Publico / Privado  (Los repositorios públicos son gratuitos, los privados son de pago)
+    - Inicializar el repositorio con un README
+
+  Presionar "Create repository"
+
+
+
+Conectar nuestro repositorio local con el repositorio en GitHub:
+
+  >$ git remote add origin git@github.com:nombre_repositorio.git
+
+	origin: Es el nombre que le damos a la conexion con el repo remoto
+	git@github.com:nombre_repositorio.git: Es la direccion SSH del repo en GitHub
+
+
+Incluir y eliminar archivos del Stage:
+
+  >$ git add archivo.txt	(Incluir)
+  >$ git reset archivo.txt	(Eliminar)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
