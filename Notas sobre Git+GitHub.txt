@@ -101,6 +101,39 @@ Crear un repositorio en GitHub:
   Presionar "Create repository"
 
 
+Saber el estado en que se ecuentra nuestro repositorio local:
+
+  >$ git status
+
+  Ej.:
+  
+  En este caso Git nos dice que hay un archivo nuevo y sin trackear, y que usemos "git add" para comenzar a trackearlo.  
+
+  >$ git status
+  # On branch master
+  # Untracked files:
+  #   (use "git add <file>..." to include in what will be committed)
+  #
+  #       Notas sobre Git+GitHub.txt
+  nothing added to commit but untracked files present (use "git add" to track)
+
+  Luego del "git add", Git nos informa que se agrego un nuevo archivo al stage pero que esta sin commitear.
+
+  >$ git status
+  # On branch master
+  # Changes to be committed:
+  #   (use "git reset HEAD <file>..." to unstage)
+  #
+  #       new file:   Notas sobre Git+GitHub.txt
+  #
+
+  Luego del commit, Git nos dice que ya no hay archivos a commitear, el directorio de trabajo se encuentra limpio (es decir no hay nuevas modificaciones)
+
+  >$ git status
+  # On branch master
+  nothing to commit (working directory clean)
+  
+
 
 Conectar nuestro repositorio local con el repositorio en GitHub:
 
@@ -115,17 +148,52 @@ Incluir y eliminar archivos del Stage:
   >$ git add archivo.txt	(Incluir)
   >$ git reset archivo.txt	(Eliminar)
 
+  Para trackear todos los archivos del repo sin necesidad de indicar su nombre uno por uno se puede usar la siguiente instruccion:
+  
+  >$ git add .
 
 
+Registrar los cambios de los archivos en Stage a la base de datos:
+
+  >$ git commit -m "Este es mi primer commit"
+  
+  Si hubo cambios en un archivo del repo, se puede hacer el add y commit en la misma instruccion de esta manera:
+
+  >$ git commit -am "Nuevos cambios"
 
 
+Registrar los cambios realizados en nuestro repositorio local en el repo de GitHub:
+
+  >$ git push origin master	("Origin" es el nombre de la conexion al repo en GitHub y "master" es el nombre del branch donde estamos trabajando)
+
+  Se puede usar el atributo -u de esta manera:
+
+  >$ git push -u origin master
+
+  Lo que se logra con el atributo -u es que Git recuerde el nombre de la conexion y el branch, permitiendonos usar el comando de esta manera posteriormente:
+
+  >$ git push
 
 
+Registrar cambios realizados en el repo de GitHub en nuestro repositorio local:
+
+  >$ git pull origin master	("Origin" es el nombre de la conexion al repo en GitHub y "master" es el nombre del branch donde registraremos los cambios)
 
 
+Descargar un repositorio completo a nuestro disco local:
+
+  >$ git clone git://github.com/user/Nombre_repositorio.git
+
+  git://github.com/user/Nombre_repositorio.git  --> Es la dirección Read-Only del repositorio
 
 
+Trabajo con branches:
 
+  Por defecto Git utiliza el branch "master" para un repositorio creado. Un branch o rama nos permite trabajar el codigo sin miedo a perder una version estable del mismo. Ej. En el branch "master" tenemos la version estable de nuestra aplicacion, pero queremos modificarlo sin perder esta version de código, entonces creamos el branch "developer" que crea una especie de repositorio paralelo donde modificamos el código sin afectar al código del branch "master". Una vez que el branch "developer" fue testeado y funciona se puede fusionar con "master" nuevamente y de esa manera reflejar los nuevos cambios en la version estable.
 
-
-
+  >$ git branch dev 		(Crea la rama "dev")
+  >$ git checkout dev 		(Nos posicionamos en la rama "dev" para comenzar a trabajar alli)
+  >$ git branch 		(Muestra todas las ramas disponibles)
+  >$ git merge dev 		(Fusion la rama en la que estoy situado con la rama "dev")
+  >$ git checkout -b newbranch 	(Crea el branch "newbranch" y nos situa en él)
+  >$ git branch -d newbranch 	(Borra el branch "newbranch")
