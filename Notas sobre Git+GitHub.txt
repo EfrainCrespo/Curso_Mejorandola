@@ -1,16 +1,16 @@
 Git + GitHub
 ============
 
-Esto no pretende ser un curso/tutorial/guia ni mucho menos, simplemente son apuntes y anotaciones que fui tomando con los distintos recursos que utilice para adentrarme en el mundo de los Sistemas de Control de Versiones.
+Esto no pretende ser un curso/tutorial/guía ni mucho menos, simplemente son apuntes y anotaciones que fui tomando con los distintos recursos que utilice para adentrarme en el mundo de los Sistemas de Control de Versiones.
 
-Cabe aclarar que hace dos dias atras no tenia la mas remota idea de que se trataba todo esto, pero con un poco de paciencia y tiempo e insistencia logre entender como trabaja este CVS.
+Cabe aclarar que hace dos días atrás no tenia la mas remota idea de que se trataba todo esto, pero con un poco de paciencia y tiempo e insistencia logre entender como trabaja este CVS.
 
 
 
 ¿Git o GitHub?
 --------------
 
-Esta es una de las cosas que mas me costo entender. No es que haya que utilizar uno u otro, porque simplemente, salvando las distancias son lo mismo, salvo que uno esta instalado en tu maquina local (Git) y el otro en un servidor externo (GitHub). GitHub actua como un repositorio de proyectos trabajados en Git. Tambien se puede dar el caso de que no quieras dejar tus proyectos disponibles en la web y puedes trabajar con Git solamente con repositorios locales.
+Esta es una de las cosas que mas me costo entender. No es que haya que utilizar uno u otro, porque simplemente, salvando las distancias son lo mismo, salvo que uno esta instalado en tu maquina local (Git) y el otro en un servidor externo (GitHub). GitHub actúa como un repositorio de proyectos trabajados en Git. También se puede dar el caso de que no quieras dejar tus proyectos disponibles en la web y puedes trabajar con Git solamente con repositorios locales.
 
 
 
@@ -18,33 +18,33 @@ Committed - Staged
 ------------------
 
 Son diferentes estados en lo que se pueden encontrar tus archivos. 
-Siguiendo un camino logico supongamos que se crea un nuevo archivo:
+Siguiendo un camino lógico supongamos que se crea un nuevo archivo:
 
-* En un primer momento se puede decir que si estado es "Sin trackear", es decir que Git no estara pendiente de sus cambios o modificaciones hasta que se lo indiquemos.
+* En un primer momento se puede decir que si estado es "Sin trackear", es decir que Git no estará pendiente de sus cambios o modificaciones hasta que se lo indiquemos.
 * Luego de indicarle a Git que haga tracking del archivo, Git nos indicara que el archivo fue modificado y ese sera su nuevo estado (Modificado).
-* Para registrar definitivamente la modificacion del archivo en el repositorio de Git primero deben pasar por el Stage. En este estado se encuentran todos los archivos que seran incluidos en la base de datos en el próximo commit.
-* Commit es el ultimo estado, donde Git toma todos los archivos que se encuentran en Stage y registra sus modificaciones en la base de datos.
+* Para registrar definitivamente la modificación del archivo en el repositorio de Git primero deben pasar por el Stage. En este estado se encuentran todos los archivos que serán incluidos en la base de datos en el próximo commit.
+* Commit es el último estado, donde Git toma todos los archivos que se encuentran en Stage y registra sus modificaciones en la base de datos.
 
-La explicacion puede ser un poco confusa porque como dije son mas que nada notas anidadas, no se asusten que al final dejo los links a los recursos que les comente mas arriba, donde seguramente lograran enteder todo esto con mayor claridad.
+La explicación puede ser un poco confusa porque como dije son mas que nada notas anidadas, no se asusten que al final dejo los links a los recursos que les comente mas arriba, donde seguramente lograran entender todo esto con mayor claridad.
 
 
 
 Consola (Git Shell)
 -------------------
 
-Para aprender Git en profundidad deberas acostumbrarte al uso de la consola, pero para los que crean esto algo imposible tambien existe una version grafica para trabajar Git+GitHub que se puede descargar del sitio de GitHub, su nombre es "GitHub for Windows". Este software tambien incluye una consola de Git (Git Shell).
+Para aprender Git en profundidad deberás acostumbrarte al uso de la consola, pero para los que crean esto algo imposible tambien existe una version grafica para trabajar Git+GitHub que se puede descargar del sitio de GitHub, su nombre es "GitHub for Windows". Este software también incluye una consola de Git (Git Shell).
 
 GitHub for Windows:   http://windows.github.com/
 GitHub for Mac:       http://mac.github.com/
 
 
-Para poder conectar Git y GitHub sin necesidad de estar indicando Usuario y Password de GitHub todo el tiempo lo ideal es crear una conexion SSH. La instalacion de cualquiera de estos clientes crea los archivos necesarios por defecto, por lo cual no seria necesario realizar el proceso a mano, aunque se describen igual los comandos a ejecutar.
+Para poder conectar Git y GitHub sin necesidad de estar indicando Usuario y Password de GitHub todo el tiempo lo ideal es crear una conexión SSH. La instalación de cualquiera de estos clientes crea los archivos necesarios por defecto, por lo cual no seria necesario realizar el proceso a mano, aunque se describen igual los comandos a ejecutar.
 
-A continuacion se detallan los comandos basicos para comenzar a usar Git+GitHub.
+A continuación se detallan los comandos basicos para comenzar a usar Git+GitHub.
 
 
 
-Configurar Git y la conexion con GitHub
+Configurar Git y la conexión con GitHub
 ---------------------------------------
 
 Configurar nuestro nombre en Git:
@@ -55,14 +55,14 @@ Configurar nuestro email en Git:
 
   >$ git config --global user.email "mail@dominio.com"
  
-Si es la primera vez que usas Git+GitHub entonces primero se debe crear la conexion SSH:
+Si es la primera vez que usas Git+GitHub entonces primero se debe crear la conexión SSH:
 
   >$ ssh-keygen -t rsa -C "mail@dominio.com" 	(Creamos la llave)
   >$ clip < ~/.ssh/id_rsa.pub			(Copiamos el contenido de id_rsa.pub. Si no llega a existir este archivo probar con github_rsa.pub)
 
   Ir a www.github.com --> Ingresar con usuario y password --> Account Settings --> SSH Keys --> Add SSH Key --> Pegar lo que acabamos de copiar, poner un titulo y guardar.
 
-  Esta clave SSH sera unica para tu computadora, de esta manera GitHub sabe que esa es tu computadora, para trabajar en otro PC hay que repetir el proceso en esa PC.
+  Esta clave SSH será única para tu computadora, de esta manera GitHub sabe que esa es tu computadora, para trabajar en otro PC hay que repetir el proceso en esa PC.
 
 
 Trabajando con Git+GitHub
@@ -84,7 +84,7 @@ Crear un nuevo repositorio local en Git:
   Algunos comandos de consola para moverte libremente entre los directorios:
      ls		Lista el contenido de un directorio
      cd		Moverte a otro directorio
-     cd ..	Ir al directorio superior (en la jerarquia de directorios)
+     cd ..	Ir al directorio superior (en la jerarquía de directorios)
      mkdir	Crear un directorio nuevo
   --------------------------------------------------------------------------------------------------------
 
@@ -94,14 +94,14 @@ Crear un repositorio en GitHub:
   Ir a http://www.github.com/new y completar:
 
     - Nombre del repositorio
-    - Descripcion del contenido del repositorio
+    - Descripción del contenido del repositorio
     - Publico / Privado  (Los repositorios públicos son gratuitos, los privados son de pago)
     - Inicializar el repositorio con un README
 
   Presionar "Create repository"
 
 
-Saber el estado en que se ecuentra nuestro repositorio local:
+Saber el estado en que se encuentra nuestro repositorio local:
 
   >$ git status
 
@@ -148,7 +148,7 @@ Incluir y eliminar archivos del Stage:
   >$ git add archivo.txt	(Incluir)
   >$ git reset archivo.txt	(Eliminar)
 
-  Para trackear todos los archivos del repo sin necesidad de indicar su nombre uno por uno se puede usar la siguiente instruccion:
+  Para trackear todos los archivos del repo sin necesidad de indicar su nombre uno por uno se puede usar la siguiente instrucción:
   
   >$ git add .
 
@@ -157,9 +157,40 @@ Registrar los cambios de los archivos en Stage a la base de datos:
 
   >$ git commit -m "Este es mi primer commit"
   
-  Si hubo cambios en un archivo del repo, se puede hacer el add y commit en la misma instruccion de esta manera:
+  Si hubo cambios en un archivo del repo, se puede hacer el add y commit en la misma instrucción de esta manera:
 
   >$ git commit -am "Nuevos cambios"
+
+
+Detalle de los ultimos commit realizados:
+
+  >$ git log
+  >$ git log --summary
+
+  Con estos dos comandos tendremos información acerca de los últimos commit realizados.
+
+
+Diferencias:
+
+  Para saber que diferencias hay entre un archivo que se agrego al Stage y la versión anterior sin modificar:
+
+  >$ git diff
+
+  Diferencias entre archivos en Stage y los anteriormente commiteados:
+
+  >$ git diff  --staged
+
+  Todas las diferencias entre el ultimo commit y el anterior:
+
+  >$ git diff HEAD	--> HEAD es un puntero que contiene el ultimo commit realizado, si queremos comparar con otro commit debemos indicar su RSA.
+
+  Diferencias entre dos commit:
+
+  >$ git diff commit1 commit2	--> coomit1 y commit2 son los RSA de los commits en cuestion
+
+  Diferencias entre dos branches:
+
+  >$ git diff master dev
 
 
 Registrar los cambios realizados en nuestro repositorio local en el repo de GitHub:
@@ -170,14 +201,16 @@ Registrar los cambios realizados en nuestro repositorio local en el repo de GitH
 
   >$ git push -u origin master
 
-  Lo que se logra con el atributo -u es que Git recuerde el nombre de la conexion y el branch, permitiendonos usar el comando de esta manera posteriormente:
+  Lo que se logra con el atributo -u es que Git recuerde el nombre de la conexión y el branch, permitiéndonos usar el comando de esta manera posteriormente:
 
   >$ git push
+
+  En GitHub se pueden observar los nuevos cambios aplicados en cada commit que se pusheo. En rojo muestra las líneas borradas en los archivos y en verde las nuevas.
 
 
 Registrar cambios realizados en el repo de GitHub en nuestro repositorio local:
 
-  >$ git pull origin master	("Origin" es el nombre de la conexion al repo en GitHub y "master" es el nombre del branch donde registraremos los cambios)
+  >$ git pull origin master	("Origin" es el nombre de la conexión al repo en GitHub y "master" es el nombre del branch donde registraremos los cambios)
 
 
 Descargar un repositorio completo a nuestro disco local:
@@ -189,7 +222,7 @@ Descargar un repositorio completo a nuestro disco local:
 
 Trabajo con branches:
 
-  Por defecto Git utiliza el branch "master" para un repositorio creado. Un branch o rama nos permite trabajar el codigo sin miedo a perder una version estable del mismo. Ej. En el branch "master" tenemos la version estable de nuestra aplicacion, pero queremos modificarlo sin perder esta version de código, entonces creamos el branch "developer" que crea una especie de repositorio paralelo donde modificamos el código sin afectar al código del branch "master". Una vez que el branch "developer" fue testeado y funciona se puede fusionar con "master" nuevamente y de esa manera reflejar los nuevos cambios en la version estable.
+  Por defecto Git utiliza el branch "master" para un repositorio creado. Un branch o rama nos permite trabajar el código sin miedo a perder una versión estable del mismo. Ej. En el branch "master" tenemos la versión estable de nuestra aplicación, pero queremos modificarlo sin perder esta versión de código, entonces creamos el branch "developer" que crea una especie de repositorio paralelo donde modificamos el código sin afectar al código del branch "master". Una vez que el branch "developer" fue testeado y funciona se puede fusionar con "master" nuevamente y de esa manera reflejar los nuevos cambios en la version estable.
 
   >$ git branch dev 		(Crea la rama "dev")
   >$ git checkout dev 		(Nos posicionamos en la rama "dev" para comenzar a trabajar alli)
@@ -197,3 +230,27 @@ Trabajo con branches:
   >$ git merge dev 		(Fusion la rama en la que estoy situado con la rama "dev")
   >$ git checkout -b newbranch 	(Crea el branch "newbranch" y nos situa en él)
   >$ git branch -d newbranch 	(Borra el branch "newbranch")
+
+
+
+Conectar github a nuestro servidor web
+--------------------------------------
+
+No es esta una práctica muy recomendada pero es posible que cuando realizamos un push a nuestro repositorio en GitHub esos cambios se reflejen tambien en nuestro servidor de producción. Eso se logra de la siguiente manera:
+
+  - En primero lugar se debe instalar Git en el servidor y crear un repositorio local en el directorio donde están los archivos de la web.
+  - En la seccion Admin del repositorio en GitHub hay una opcion llamada "Service Hooks" que contiene todas las acciones que el mismo GitHub puede realizar cuando recibe un nuevo commit o push. Seleccionar "WebHook URLs".
+  - Esta opción permite ingresar una URL hacia un archivo de nuestro servidor web. Ej.: www.miweb.com/pull.php
+  - Por ultimo debemos crear un archivo con algún lenguaje de servidor (python, php, ruby, etc.) que ejecute comandos en consola para hacer un pull al repositorio en GitHub y de esta manera bajar los archivos que fueron modificados nuevamente.
+
+
+Recursos
+--------
+
+Estos recursos me ayudaron a aclarar mi panorama acerca de este tema y me permitieron comenzar a trabajar con Git+GitHub:
+
+- Documentación de GitHub: 				http://learn.github.com/p/intro.html
+- Documentación de Git: 				http://git-scm.com/documentation
+- Curso de Introducción a Git y GitHub en Mejorando.la:	https://mejorando.la/videos/curso-de-introduccion-git-y-github/
+- Un Poco de Git y GitHub en Post Mejorando.la:		http://www.youtube.com/watch?v=gYQmUtRczmI
+- Curso interactivo Git+GitHub on-line: 		http://try.github.com/
